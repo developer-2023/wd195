@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            arrow function
+        */
+        function test(a, b) {
+            return a * b;
+        }
+        
+        const anonym = function (a, b) {
+            return a * b;
+        }
+
+        // arrow function
+        // => fat arrow
+        const multiply = (a, b) => a * b
+        
+        console.log(test(3, 10)); // 30
+        console.log(anonym(3, 10)); // 30
+        console.log(multiply(3, 10)); // 30
+    
+        const substract = (a, b) => {
+            return a - b;
+        }
+
+        console.log(substract(3, 10));
+
+        // arrow function doesn't have arguments object
+        // arrow function can use rest operator
+        // let show = () => console.log(arguments);
+        // console.log(show(1,2,3,4,5));
+        
+        let show = (...params) => console.log(params);
+        show(1,2,3,4,5);
+        
+        let getObj = (data) => {
+            return {
+                ...data,
+                info: "Some object"
+            };
+        } 
+        const obj = {
+            name: "Steve",
+            surname: "Collins"
+        }
+        console.log(getObj(obj));
+
+        let getObj2 = (data) => ({...data, info: "Some object"});
+        console.log(getObj(obj));
+</script>
+</body>
+</html>
